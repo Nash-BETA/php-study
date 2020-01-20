@@ -1,7 +1,6 @@
 <?php
 
-//ヘッダーの読み込み
-require_once('C:\xampp\htdocs\php\general\header.php');
+
 //DB情報の読み込み
 require_once('C:\xampp\htdocs\php\general\db.php');
 
@@ -13,7 +12,9 @@ if(isset($_COOKIE["PHPSESSID"])){
     setcookie("PHPSESSID" , '' ,time() - 1800 , '/');
 }
 
-session_destroy();
+
+//ヘッダーの読み込み
+require_once('C:\xampp\htdocs\php\general\header.php');
 
 ?>
 
