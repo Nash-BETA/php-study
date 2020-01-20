@@ -1,0 +1,13 @@
+body{
+    background: #FFF;
+    margin-top: 200px;
+}
+header{
+    background: #b3ecaa;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s; /*ヘッダーが0.5秒かけて動く*/
+}
