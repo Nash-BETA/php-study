@@ -10,6 +10,7 @@ if (isset($_SESSION["name"])) {
     ?>
     <a href='http://localhost/php'>home</a>
     <a href='http://localhost/php\user\edit\index.php'>edit</a>
+    <a href='http://localhost/php\user\logout\index.php'>削除</a>
     <?php
 } else {
     //ログアウト
