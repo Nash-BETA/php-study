@@ -8,7 +8,7 @@ require_once('C:\xampp\htdocs\php\general\db.php');
 try{
     $pdo = new PDO(DB_DNS,DB_NAME,DB_PASS);
     $id  = $_SESSION['id'];
-    echo $id;
+    
 }catch(PDOException $e){
     echo $e->getMessage;
 }
