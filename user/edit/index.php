@@ -5,7 +5,6 @@ require_once('C:\xampp\htdocs\php\general\header.php');
 //DB情報の読み込み
 require_once('C:\xampp\htdocs\php\general\db.php');
 
-
 if(isset($_POST['edit']) || isset($_PUT['edit'])){
     $id   = $_SESSION['id'];
     if(empty(!$_POST['name']) && empty(!$_POST['password'])){
@@ -32,16 +31,16 @@ if(isset($_POST['edit']) || isset($_PUT['edit'])){
         $query  = "UPDATE users SET image = '$filename'  WHERE id='$id' ";
         $resurt = $pdo->query($query)->fetch(PDO::FETCH_ASSOC);
         $image_file = "C:/xampp/htdocs/php/image/profile/" . $filename;
-        echo $image_file;
         move_uploaded_file($file , $image_file);
-        //header('Location: http://localhost/php');
-
+        $_SESSION['image'] = $filename;
+        header('Location: http://localhost/php');
     }catch(PDOException $e){
         echo $e->getMessage;
     }
 }
 
 ?>
+<link rel="stylesheet" href=<?php echo 'http://' . $_SERVER['SERVER_NAME']."/php/css/edit.css"?>>
 
 <!DOCTYPE html>
 <html>
@@ -49,14 +48,11 @@ if(isset($_POST['edit']) || isset($_PUT['edit'])){
 <meta charset='UTF-8'>
 </head>
 <body>
-
-
+    <img src=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . "/php/image/profile/" . $_SESSION['image'];?>>
 <form method="post" action="http://localhost/php/user/edit/" enctype="multipart/form-data">
     <input type="file" name="image"><br><br>
 <button type='submit' class="btn btn-default" name="send">画像を変える</button>
 </form>
-
-
 <form method="post" action="http://localhost/php/user/edit/">
     <h1>フォーム修正</h1>
     <input type="name" name="name"><br><br>

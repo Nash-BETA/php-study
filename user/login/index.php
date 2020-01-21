@@ -15,8 +15,9 @@ if(isset($_POST['login'])){
         $result = $pdo->query($query);
         if($row = $result->fetch(PDO::FETCH_ASSOC)){
             if($pass == $row['password']){
-                $_SESSION['name'] = $name;
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['name']  = $name;
+                $_SESSION['id']    = $row['id'];
+                $_SESSION['image'] = $row['image'];
                 header('Location: http://localhost/php');
                 exit();  // 処理終了
             }else {

@@ -6,8 +6,6 @@ require_once('C:\xampp\htdocs\php\general\header.php');
 require_once('C:\xampp\htdocs\php\general\db.php');
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
