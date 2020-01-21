@@ -24,13 +24,18 @@ if(isset($_POST['edit']) || isset($_PUT['edit'])){
         echo "名前・パスワード両方入力ください";
     }  
 }elseif(isset($_POST['send'])  || isset($_PUT['send'])){
-    $id   = $_SESSION['id'];
+    $id       = $_SESSION['id'];
+    $filename = $_FILES['image']['name'];
+    $file     = $_FILES['image']['tmp_name'];
     try{
         $pdo    = new PDO(DB_DNS,DB_NAME,DB_PASS);
-        $filename = $_POST['file'];
         $query  = "UPDATE users SET image = '$filename'  WHERE id='$id' ";
         $resurt = $pdo->query($query)->fetch(PDO::FETCH_ASSOC);
-        header('Location: http://localhost/php');
+        $image_file = "C:/xampp/htdocs/php/image/profile/" . $filename;
+        echo $image_file;
+        move_uploaded_file($file , $image_file);
+        //header('Location: http://localhost/php');
+
     }catch(PDOException $e){
         echo $e->getMessage;
     }
@@ -46,10 +51,11 @@ if(isset($_POST['edit']) || isset($_PUT['edit'])){
 <body>
 
 
-<form method="post" action="http://localhost/php/user/edit/">
-    <input type="file" name="file"><br><br>
+<form method="post" action="http://localhost/php/user/edit/" enctype="multipart/form-data">
+    <input type="file" name="image"><br><br>
 <button type='submit' class="btn btn-default" name="send">画像を変える</button>
 </form>
+
 
 <form method="post" action="http://localhost/php/user/edit/">
     <h1>フォーム修正</h1>
