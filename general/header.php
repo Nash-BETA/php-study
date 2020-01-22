@@ -17,8 +17,8 @@ if (isset($_SESSION["name"])) {
     ?>
     <a href='http://localhost/php'>home</a>
     <br>
-    <a href='http://localhost\php\user\add\index.php'>新規会員登録</a>
-    <a href='http://localhost\php\user\login\index.php' >ログイン</a>
+    <a href='http://localhost\php\user\creat'>新規会員登録</a>
+    <a href='http://localhost\php\user\login' >ログイン</a>
     <?php    
 }
 ?>

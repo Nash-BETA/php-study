@@ -1,18 +1,13 @@
 <?php
-
-
 //DB情報の読み込み
 require_once('C:\xampp\htdocs\php\general\db.php');
 
-
 //$_SESSIONの削除
 $_SESSION = array();
-//COOKIY
+//COOKIE
 if(isset($_COOKIE["PHPSESSID"])){
     setcookie("PHPSESSID" , '' ,time() - 1800 , '/');
 }
-
-
 //ヘッダーの読み込み
 require_once('C:\xampp\htdocs\php\general\header.php');
 

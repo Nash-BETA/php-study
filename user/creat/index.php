@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
         $result          = $pdo->query($query);
         $row             = $result->fetch(PDO::FETCH_ASSOC);
         $_SESSION['id']  = $row['id'];
-        header('Location: http://localhost/php');
+        header('Location: http://localhost/php/user/creat/confirm');
     }catch(PDOException $e){
         echo $e->getMessage();
         die();
