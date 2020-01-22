@@ -32,4 +32,19 @@ if(isset($_POST['submit'])){
 <meta charset='UTF-8'>
 
 
-<title>新規登録の確認画面</title>
+<title>新規登録ぞっす。もっと送る</title>
+<p>新規登録ぞっす。もっと送る</p>
+<!--内容確認
+<p><?php ?></p>
+<p><?php ?></p>
+<p><?php ?></p>
+<p><?php ?></p>
+<p><?php ?></p>
+<p><?php ?></p>
+-->
+
+<!--テーブル増やしたい-->
+<a>追加情報</a>
+<form action="../complete/index.php">
+
+</form>
