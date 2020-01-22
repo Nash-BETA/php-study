@@ -13,9 +13,10 @@ require_once('C:\xampp\htdocs\php\general\db.php');
 <title><?php echo 'hello'?></title>
 </head>
 
-<body>
 <h1><?php echo 'TOP'?></h1>
-<a href='./user/add'>新規会員登録</a>
+<a href='./user/creat'>新規会員登録</a>
 <a href='./user/login'>ログイン</a>
+<a id=test>ホームだよ</a>
+
 </body>
 </html>
