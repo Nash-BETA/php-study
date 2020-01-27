@@ -36,7 +36,7 @@ require_once('C:\xampp\htdocs\php\general\db.php');
 <div class="result"></div>
     <script type="text/javascript">
 
-        var file = './confirm/index.php';
+        var file = 'C:\xampp\htdocs\php\user\creat\index.php';
         $(function(){
             // Ajax button click
             $('#ajax').on('click',function(){
@@ -46,8 +46,8 @@ require_once('C:\xampp\htdocs\php\general\db.php');
                     //action
                     type:'POST',
                     data:{
-                        'id-name':$('#name').val(),
-                        'id-password':$('#password').val()
+                        'name':$('#name').val(),
+                        'password':$('#password').val()
                     }
                 })
                 // Ajaxリクエストが成功した時発動

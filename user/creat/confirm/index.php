@@ -18,7 +18,6 @@ if(isset($_POST['submit'])){
         $result          = $pdo->query($query);
         $row             = $result->fetch(PDO::FETCH_ASSOC);
         $_SESSION['id']  = $row['id'];
-        header('Location: http://localhost/php/user/creat/confirm');
     }catch(PDOException $e){
         echo $e->getMessage();
         die();
@@ -34,17 +33,11 @@ if(isset($_POST['submit'])){
 
 <title>新規登録ぞっす。もっと送る</title>
 <p>新規登録ぞっす。もっと送る</p>
-<!--内容確認
-<p><?php ?></p>
-<p><?php ?></p>
-<p><?php ?></p>
-<p><?php ?></p>
-<p><?php ?></p>
-<p><?php ?></p>
--->
+内容確認
+<p>名前：<?php echo $name;?></p>
 
 <!--テーブル増やしたい-->
 <a>追加情報</a>
-<form action="../complete/index.php">
-
+<form action="../complete/index.php" method = 'post'>
+    <input >
 </form>

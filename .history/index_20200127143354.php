@@ -29,7 +29,7 @@ $(function(){
     $.getJSON(path, function(data){
       var arr = [];
       $.each(data, function(key, val){
-        arr.push(key + val);
+        arr.push("key⇒" + key + " val⇒" + val);
       });
  
       //取得したJSONデータをコンソールに表示する
@@ -38,6 +38,8 @@ $(function(){
       }
  
     });
+ 
+  ;
 });
 </script>
 

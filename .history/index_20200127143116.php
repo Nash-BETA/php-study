@@ -21,7 +21,7 @@ require_once('C:\xampp\htdocs\php\general\db.php');
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $(function(){
-  
+  $('#btn1').click(function(){
     //JSONデータへのパス
     var path = "https://holidays-jp.github.io/api/v1/date.json";  //httpから始まるURL型式でもOKです。
  
@@ -29,7 +29,7 @@ $(function(){
     $.getJSON(path, function(data){
       var arr = [];
       $.each(data, function(key, val){
-        arr.push(key + val);
+        arr.push("key⇒" + key + " val⇒" + val);
       });
  
       //取得したJSONデータをコンソールに表示する
@@ -38,6 +38,8 @@ $(function(){
       }
  
     });
+ 
+  });
 });
 </script>
 

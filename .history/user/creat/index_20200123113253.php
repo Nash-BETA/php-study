@@ -23,31 +23,26 @@ require_once('C:\xampp\htdocs\php\general\db.php');
 <!--後ほどバリデーション付ける-->
 <h1>ユーザー登録</h1>
 <form action="./confirm/index.php" method = 'post'>
-    <input type='text' name='name' id='id-name'><br>
-    <input type='password' name='password'id='id-password'><br> 
+    <input type='text' name='name'><br>
+    <input type='text' name='password'><br> 
     <label for='gender'>性別</label><br>
     <!--nameが同じだと同じラジオとして処理される-->
     <input type='Radio' name='gender' value='Male' checked>Male
     <input type='Radio' name='gender' value='Female'>Female<br>
-    <input type='submit' name='submit'>
-</form>
-
-<button id="ajax">ajax</button>
-<div class="result"></div>
+    <input id='ajax' type='submit' name='submit'>
+    
     <script type="text/javascript">
 
-        var file = './confirm/index.php';
+        var file = 'C:\xampp\htdocs\php\user\creat\index.php';
         $(function(){
             // Ajax button click
             $('#ajax').on('click',function(){
                 $.ajax({
-                    //送信先
                     url:file,
-                    //action
                     type:'POST',
                     data:{
-                        'id-name':$('#name').val(),
-                        'id-password':$('#password').val()
+                        'id':$('#id').val(),
+                        'passward':$('#passward').val()
                     }
                 })
                 // Ajaxリクエストが成功した時発動
@@ -68,6 +63,6 @@ require_once('C:\xampp\htdocs\php\general\db.php');
         });
 
     </script>
-
+</form>
 </body>
 </html>
